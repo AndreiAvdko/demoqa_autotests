@@ -1,0 +1,21 @@
+0) Тестовые данные (Test Data)
+- {
+    {'Allure testops', 'https://qameta.io/'}
+    {'Selenide', 'https://ru.selenide.org'}
+}
+
+1) Заголовок
+    Адрес test_data[1] должен быть в выдаче гугла по запросу test_data[0]
+
+2) Приоритет/Критичность
+    Blocker (Blocker\Critical\Major\Minor)
+
+3) (optional) Предусловия
+    Открыт браузер с главной страницей google.com
+
+4) Шаги
+    - Ввести в строку поискового запроса test_data[0]
+    - Нажать Enter/кнопку 'Search'
+
+5) Ожидаемый результат
+    Адрес test_data[1] должен быть в выдаче гугла

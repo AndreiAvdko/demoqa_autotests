@@ -1,17 +1,19 @@
+package com.demoqa;
+
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-
+import org.junit.jupiter.api.*;
 import java.io.File;
-import java.util.Iterator;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class Selenide {
+
+// Правильное название для теста через @DisplayName("Описание теста")   -- (__Описание попадёт в Allure__)
+
+// Игнорирование прохождения теста через @Disabled("JIRA-номер задачи")
+
+// @Tags({@Tags("Blocker"), @Tag("UI_TEST")})
+public class AutotestsForPracticeFormWithSelenide {
 
     @BeforeAll
     static void beforeAll() {
@@ -25,7 +27,10 @@ public class Selenide {
         // Configuration.baseUrl = "https://demoqa.com";
     }
 
+
     @Test
+    @DisplayName("Проверка заполнения формы с личными данными")
+    @Tags({@Tag("BLOCKER"), @Tag("UI_TEST")})
     void successfulSearchTest() {
         //setTimeout(function(){debugger;}, 4000); - настройка брейкпоинта в браузере
         open("https://demoqa.com/automation-practice-form/");
@@ -48,10 +53,10 @@ public class Selenide {
         $("#dateOfBirth-label").click(); // сбрасываем фокус, закрываем календарь
 
         // Выбор дисциплин
-         $(".subjects-auto-complete__value-container").click();
-         $("[aria-live=polite]").exists();
-         actions().sendKeys("P").perform();
-         $(byText("Physics")).click();
+        $(".subjects-auto-complete__value-container").click();
+        $("[aria-live=polite]").exists();
+        actions().sendKeys("P").perform();
+        $(byText("Physics")).click();
 
         // Выбор хобби
         $("[for=hobbies-checkbox-1]").click();
@@ -61,7 +66,6 @@ public class Selenide {
 
         // Загрузка файлов
         $("input#uploadPicture").uploadFile(new File("src/test/resources/images.jfif"));
-
         $("#currentAddress").setValue("г.Санкт-Петербург, Репищева ул., 1");
 
         // Выбор страны
@@ -86,7 +90,7 @@ public class Selenide {
         $$("table tbody tr td+td").get(4).shouldBe(text("08 August,2023"));
         $$("table tbody tr td+td").get(5).shouldBe(text("Physics"));
         $$("table tbody tr td+td").get(6).shouldBe(text("Sports, Reading, Music"));
-        $$("table tbody tr td+td").get(7).shouldBe(text("images.jfif"));
+        $$("table tbody tr td+td").get(7).shouldBe(text("com.demoqa/images.jfif"));
         $$("table tbody tr td+td").get(8).shouldBe(text("г.Санкт-Петербург, Репищева ул., 1"));
         $$("table tbody tr td+td").get(9).shouldBe(text("Uttar Pradesh Lucknow"));
 
