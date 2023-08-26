@@ -1,20 +1,38 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.11.2'
 }
+
+allure {
+    report { // секция репорта
+        version.set("2.19.0")
+    }
+    adapter { // отвечает за появление директории build/allure-result
+            // собирает результаты теста в json
+        aspectjWeaver.set(true) // обработка аанотации @Step
+        frameworks {
+            junit5 { // название фремворка
+                adapterVersion.set("2.19.0") // версия интерграции фреймворка и Allure
+            }
+        }
+    }
+}
+
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation (
+    testImplementation(
             "com.codeborne:selenide:6.17.0",
             "org.junit.jupiter:junit-jupiter:5.10.0",
             "org.assertj:assertj-core:3.24.2",
             "com.codeborne:pdf-test:1.5.0",
             "com.codeborne:xls-test:1.4.3",
             "com.opencsv:opencsv:5.7.1",
-            "com.google.code.gson:gson:2.10.1"
+            "com.google.code.gson:gson:2.10.1",
+            'io.qameta.allure:allure-selenide:2.23.0'
     )
 }
 
