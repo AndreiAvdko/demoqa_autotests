@@ -1,4 +1,4 @@
-package tests;
+package tests.FirstStepsWithApiTests;
 
 import org.junit.jupiter.api.Test;
 
@@ -53,6 +53,4 @@ public class RestAssuredExamples {
                 .statusCode(200)
                 .body("browsers.chrome", hasKey("100.0"));
     }
-
-
 }

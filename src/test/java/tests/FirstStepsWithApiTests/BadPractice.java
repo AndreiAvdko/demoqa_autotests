@@ -1,4 +1,4 @@
-package tests;
+package tests.FirstStepsWithApiTests;
 
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BadPractice {
     // ПЛОХАЯ ПРАКТИКА НАПИСАНИЯ АВТОТЕСТА
     // ТАК НИЗЯ
-    // tests.BadPractice
+    // tests.FirstStepsWithApiTests.BadPractice
     @Test
     void checkResponseBadPractice() {
         String expectedResponseString = "{\"total\":20,\"used\":0,\"queued\":0,\"pending\":0,\"browsers\"" +

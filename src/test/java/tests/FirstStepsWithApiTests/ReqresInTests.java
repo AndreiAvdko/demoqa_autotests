@@ -1,4 +1,4 @@
-package tests;
+package tests.FirstStepsWithApiTests;
 
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
@@ -34,7 +34,7 @@ public class ReqresInTests {
                 .contentType(ContentType.JSON)
                 .body(data)
                 .when()
-                .post("https://reqres.in/api/login")
+                    .post("https://reqres.in/api/login")
                 .then()
                 .log().status()
                 .log().body()
