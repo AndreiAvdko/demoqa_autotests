@@ -1,3 +1,5 @@
+package tests;
+
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BadPractice {
     // ПЛОХАЯ ПРАКТИКА НАПИСАНИЯ АВТОТЕСТА
     // ТАК НИЗЯ
-    // BadPractice
+    // tests.BadPractice
     @Test
     void checkResponseBadPractice() {
         String expectedResponseString = "{\"total\":20,\"used\":0,\"queued\":0,\"pending\":0,\"browsers\"" +
