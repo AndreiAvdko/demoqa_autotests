@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.is;
 3. Check value.ready is true
 */
 
-public class RestAssuredExamples2 {
+public class RestAssuredExamplesWithAuth {
     @Test
     public void checkWDHubStatusWithoutAuth() {
         given()

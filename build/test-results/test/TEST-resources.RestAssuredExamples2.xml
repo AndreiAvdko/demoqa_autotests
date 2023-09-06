@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="resources.RestAssuredExamples2" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-06T12:33:45" hostname="DESKTOP-I09E3EB" time="3.859">
-  <properties/>
-  <testcase name="checkWDHubStatusWithAuth()" classname="resources.RestAssuredExamples2" time="3.859"/>
-  <system-out><![CDATA[Request URI:	https://selenoid.autotests.cloud/wd/hub/status
-HTTP/1.1 200 OK
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
